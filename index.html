@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/assets/css/index.css">
+        <script src="/assets/js/index.js"></script>
+        <script type="text/javascript" src="/assets/json/player-stats.json"></script>
+    </head>
+
+        <div id="root" class="card-container">
+            <div id="card">
+                <div class="playerInformation">
+                    <select onChange="changePlayer()" id="player-names" name="players"></select>
+                    <div id="playerBackground"></div>
+                    <div id="playerBadge"></div>
+                </div>
+
+                <div id="informationSection" > 
+                    <p id="name">Name</p>
+                    <p id="position">Position</p>
+                    <br>
+
+                    <table class="playerStats">
+                        <tr>
+                          <th>Appearances:</th>
+                          <td id="appearances"></td>
+                        </tr>
+                        <tr>
+                          <th>Goals:</th>
+                          <td id="goals"></td>
+                        </tr>
+                        <tr>
+                          <th>Assists:</th>
+                          <td id="assists"></td>
+                        </tr>
+                        <tr>
+                            <th>Goals Per Match:</th>
+                            <td id="goalsPerMatch"></td>
+                        </tr>
+                        <tr>
+                            <th>Passes Per Minute:</th>
+                            <td id="passesPerMinute"></td>
+                        </tr>
+                      </table>
+                </div>
+            </div>
+        </div>
+</html>
