@@ -1,15 +1,6 @@
 var players = {};
 
 window.onload = function(){
-  
-let dropdown = document.getElementById('player-names');
-dropdown.length = 0;
-
-let defaultOption = document.createElement('option');
-defaultOption.text = 'Choose a player';
-
-dropdown.add(defaultOption);
-dropdown.selectedIndex = 0;
 
 const url = '/assets/json/player-stats.json';
 
@@ -26,6 +17,15 @@ fetch(url)
         let option;
 
         players = data[0].players;
+
+        let dropdown = document.getElementById('player-names');
+        dropdown.length = 0;
+
+        // let defaultOption = document.createElement('option');
+        // defaultOption.text = 'Choose a player';
+
+        // dropdown.add(defaultOption);
+        // dropdown.selectedIndex = 0;
     
     	for (let i = 0; i < players.length; i++) {
           option = document.createElement('option');
@@ -33,6 +33,7 @@ fetch(url)
       	  option.text = players[i].player.name.first + " " + players[i].player.name.last;
       	  option.value = players[i].player.name.first;
       	  dropdown.add(option);
+          changePlayer();
     	}    
       });  
     }  
